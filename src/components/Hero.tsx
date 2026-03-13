@@ -41,12 +41,12 @@ export default function Hero() {
           {/* BUTTONS */}
           <div className="flex gap-4 mb-6">
             <Link to="projects" smooth duration={500}>
-              <button className="bg-[#353535] text-white px-5 py-2 rounded-md text-sm">
+              <button className="bg-[#353535] text-white px-5 py-2 rounded-md text-sm hover:bg-[#2a2a2a] transition">
                 View my work
               </button>
             </Link>
 
-            <Link to="contact" smooth duration={500} className="border border-[#353535] px-5 py-2 rounded-md text-sm">
+            <Link to="contact" smooth duration={500} className="border border-[#353535] px-5 py-2 rounded-md text-sm hover:bg-[#f5f3eb] transition">
             <button>
               Contact Me
             </button>

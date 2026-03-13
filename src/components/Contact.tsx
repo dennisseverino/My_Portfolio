@@ -117,7 +117,7 @@ export default function Contact() {
               ></textarea>
             </div>
             <button className="bg-[#353535] text-white px-8 py-2 rounded hover:bg-[#2a2a2a] transition">
-              Send Message
+              Send Me Message
             </button>
 
           </form>
