@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 type Project = {
   id: string;
   type: string;
@@ -91,9 +93,14 @@ export default function Projects() {
                   {project.description}
                 </p>
 
-                {/* <button className="text-[#82FFF3] text-sm">
-                  View Site →
-                </button> */}
+                {project.id === "02" && (
+                  <Link
+                    to="/produce"
+                    className="text-[#82FFF3] text-sm hover:underline"
+                  >
+                    View More →
+                  </Link>
+                )}
               </div>
 
             </div>
