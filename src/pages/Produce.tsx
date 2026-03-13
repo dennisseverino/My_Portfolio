@@ -34,7 +34,20 @@ export default function Produce() {
     "/produce_assets/vendor/Schedule.jpg",
   ];
 
-  const allImages = [...loginImages, ...buyerImages, ...vendorImages];
+  const webImages = [
+    "/produce_assets/web/analytics.png",
+    "/produce_assets/web/collection.png",
+    "/produce_assets/web/login.png",
+    "/produce_assets/web/logs.png",
+    "/produce_assets/web/messages.png",
+    "/produce_assets/web/notification.png",
+    "/produce_assets/web/posts.png",
+    "/produce_assets/web/stats.png",
+    "/produce_assets/web/transactions.png",
+    "/produce_assets/web/users.png",
+    ];
+
+  const allImages = [...loginImages, ...buyerImages, ...vendorImages, ...webImages];
 
   const [open, setOpen] = useState(false);
   const [index, setIndex] = useState(0);
@@ -51,7 +64,7 @@ export default function Produce() {
         {title}
       </h2>
 
-      <div className="grid grid-cols-2 md:grid-cols-6 gap-5">
+      <div className="grid grid-cols-2 md:grid-cols-6 gap-6">
 
         {images.map((img, i) => (
           <div
@@ -113,7 +126,7 @@ export default function Produce() {
         <h2 className="text-xl font-semibold text-[#353535] mt-8">
           Tech Stack Used
         </h2>
-        
+
         <div className="flex flex-wrap gap-3 mt-6">
 
           <span className="bg-gray-200 px-3 py-1 rounded text-sm">
@@ -154,6 +167,12 @@ export default function Produce() {
         vendorImages,
         loginImages.length + buyerImages.length
       )}
+
+      {renderSection(
+        "Web Administration Dashboard",
+        webImages,
+        loginImages.length + buyerImages.length + vendorImages.length
+    )}
 
       {/* LIGHTBOX */}
       <Lightbox

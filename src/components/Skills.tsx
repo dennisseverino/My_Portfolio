@@ -28,7 +28,7 @@ const skills: SkillCategory[] = [
   {
     number: "05",
     title: "Tools",
-    skills: ["Git"],
+    skills: ["Git", "VS Code", "Postman", "Vercel"],
   },
 ];
 
@@ -60,13 +60,14 @@ export default function Skills() {
               <span className="text-[#C0C0C0] font-bold">
                 {category.number}
               </span>
-              <h3 className="font-semibold text-[#353535]">
+
+              <h2 className="font-semibold text-[#353535] text-xl">
                 {category.title}
-              </h3>
+              </h2>
             </div>
 
             {/* SKILLS */}
-            <ul className="space-y-2 text-gray-600 text-sm">
+            <ul className="space-y-2 text-gray-600 text-base">
               {category.skills.map((skill, i) => (
                 <li key={i} className="flex items-center gap-2">
                   <span className="w-3 h-3 border border-[#353535] inline-block"></span>
