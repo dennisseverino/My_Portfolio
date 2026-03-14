@@ -1,0 +1,12 @@
+{
+  "routes": [
+    {
+      "src": "/masskaraWebsite",
+      "dest": "/masskaraWebsite/index.html"
+    },
+    {
+      "src": "/masskaraWebsite/(.*)",
+      "dest": "/masskaraWebsite/$1"
+    }
+  ]
+}
