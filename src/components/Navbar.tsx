@@ -18,7 +18,7 @@ export default function Navbar() {
           className="relative group cursor-pointer"
         >
           Home
-          <span className="absolute left-0 -bottom-1 h-[2px] w-full bg-[#82FFF3] scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300"></span>
+          <span className="absolute left-0 -bottom-1 h-[2px] w-full bg-[#353535] scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300"></span>
         </Link>
 
         {/* ABOUT */}
@@ -29,7 +29,7 @@ export default function Navbar() {
           className="relative group cursor-pointer"
         >
           About
-          <span className="absolute left-0 -bottom-1 h-[2px] w-full bg-[#82FFF3] scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300"></span>
+          <span className="absolute left-0 -bottom-1 h-[2px] w-full bg-[#353535] scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300"></span>
         </Link>
 
         {/* SKILLS */}
@@ -40,7 +40,7 @@ export default function Navbar() {
           className="relative group cursor-pointer"
         >
           Skills
-          <span className="absolute left-0 -bottom-1 h-[2px] w-full bg-[#82FFF3] scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300"></span>
+          <span className="absolute left-0 -bottom-1 h-[2px] w-full bg-[#353535] scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300"></span>
         </Link>
 
         {/* PROJECTS */}
@@ -51,7 +51,7 @@ export default function Navbar() {
           className="relative group cursor-pointer"
         >
           Projects
-          <span className="absolute left-0 -bottom-1 h-[2px] w-full bg-[#82FFF3] scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300"></span>
+          <span className="absolute left-0 -bottom-1 h-[2px] w-full bg-[#353535] scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300"></span>
         </Link>
 
         {/* CONTACT */}
@@ -62,7 +62,7 @@ export default function Navbar() {
           className="relative group cursor-pointer"
         >
           Contact
-          <span className="absolute left-0 -bottom-1 h-[2px] w-full bg-[#82FFF3] scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300"></span>
+          <span className="absolute left-0 -bottom-1 h-[2px] w-full bg-[#353535] scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300"></span>
         </Link>
 
       </div>
