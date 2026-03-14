@@ -6,6 +6,7 @@ type Project = {
   title: string;
   description: string;
   image: string;
+  link: string;
 };
 
 const projects: Project[] = [
@@ -16,6 +17,7 @@ const projects: Project[] = [
     description:
       "Designing a static website to showcase the 2023 MassKara Festival, capturing the vibrant essence of Bacolod City.",
     image: "/1.svg",
+    link: "/masskaraWebsite/index.html",
   },
   {
     id: "02",
@@ -24,6 +26,8 @@ const projects: Project[] = [
     description:
       "ProDuce is a web and mobile e-commerce platform that enables public market vendors to sell vegetables online while reducing waste.",
     image: "/2.svg",
+    link: "/produce",
+
   },
   {
     id: "03",
@@ -32,6 +36,7 @@ const projects: Project[] = [
     description:
       "A role-based employee management system designed to streamline attendance, scheduling, and access control.",
     image: "/3.svg",
+    link: "#",
   },
 ];
 
@@ -93,13 +98,23 @@ export default function Projects() {
                   {project.description}
                 </p>
 
-                {project.id === "02" && (
-                  <Link
-                    to="/produce"
-                    className="text-[#82FFF3] text-sm hover:underline"
-                  >
-                    View More →
-                  </Link>
+                {project.link && (
+                  project.link.endsWith(".html") ? (
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      className="text-[#82FFF3] text-sm hover:underline"
+                    >
+                      View More →
+                    </a>
+                  ) : (
+                    <Link
+                      to={project.link}
+                      className="text-[#82FFF3] text-sm hover:underline"
+                    >
+                      View More →
+                    </Link>
+                  )
                 )}
               </div>
 
