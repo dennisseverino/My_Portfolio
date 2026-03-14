@@ -105,7 +105,7 @@ export default function Projects() {
                       target="_blank"
                       className="text-[#82FFF3] text-sm hover:underline"
                     >
-                      View More →
+                      View More.. →
                     </a>
                   ) : (
                     <Link
