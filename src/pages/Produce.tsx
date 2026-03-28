@@ -91,7 +91,7 @@ export default function Produce() {
         to="/"
         className="text-sm text-[var(--page-muted-soft)] transition hover:text-[var(--page-text)]"
       >
-        ← Back to Portfolio
+        Back to Portfolio
       </Link>
 
       <div className="mt-10 max-w-3xl">
@@ -100,17 +100,18 @@ export default function Produce() {
         </h1>
 
         <p className="mt-3 text-lg text-[var(--page-muted)]">
-          Web & Mobile E-Commerce Platform
+          Web, Mobile & UI/UX Design E-Commerce Platform
         </p>
 
         <p className="mt-6 leading-relaxed text-[var(--page-muted)]">
           ProDuce is a web and mobile e-commerce system designed to help public
           market vendors sell vegetables online while reducing food waste and
-          improving market accessibility for customers.
+          improving market accessibility for customers, with the interface and
+          user flow shaped through dedicated UI/UX design work.
         </p>
 
         <h2 className="mt-8 text-xl font-semibold text-[var(--page-text)]">
-          Tech Stack Used
+          Tech Stack & Design Tools Used
         </h2>
 
         <div className="mt-6 flex flex-wrap gap-3">

@@ -23,7 +23,7 @@ const projects: Project[] = [
   },
   {
     id: "02",
-    type: "Web/Mobile Application",
+    type: "Web / Mobile / Design Project",
     title: "E-Commerce Platform",
     description:
       "ProDuce connects public market vendors and customers through a streamlined buying flow designed to reduce waste and improve accessibility.",
@@ -116,25 +116,15 @@ export default function Projects() {
                       {project.description}
                     </p>
 
-                    {project.link !== "#" && (
+                    {project.id === "02" && project.link !== "#" && (
                       <div className="mt-8">
-                        {project.link === "/produce" ? (
-                          <Link
-                            to={project.link}
-                            className="inline-flex items-center gap-3 rounded-full border border-[var(--contrast-border)] px-5 py-3 text-sm font-semibold text-[var(--contrast-text)] hover:border-[var(--accent)] hover:text-[var(--accent)]"
-                          >
-                            Explore Project
-                            <FaArrowRight />
-                          </Link>
-                        ) : (
-                          <a
-                            href={project.link}
-                            className="inline-flex items-center gap-3 rounded-full border border-[var(--contrast-border)] px-5 py-3 text-sm font-semibold text-[var(--contrast-text)] hover:border-[var(--accent)] hover:text-[var(--accent)]"
-                          >
-                            Explore Project
-                            <FaArrowRight />
-                          </a>
-                        )}
+                        <Link
+                          to={project.link}
+                          className="inline-flex items-center gap-3 rounded-full border border-[var(--contrast-border)] px-5 py-3 text-sm font-semibold text-[var(--contrast-text)] hover:border-[var(--accent)] hover:text-[var(--accent)]"
+                        >
+                          Explore Project
+                          <FaArrowRight />
+                        </Link>
                       </div>
                     )}
                   </div>
