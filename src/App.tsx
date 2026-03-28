@@ -2,6 +2,7 @@ import { AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import LoadingScreen from "./components/LoadingScreen";
+import ScrollToTopButton from "./components/ScrollToTopButton";
 import Home from "./pages/Home";
 import Produce from "./pages/Produce";
 
@@ -100,6 +101,8 @@ export default function App() {
         />
         <Route path="/produce" element={<Produce />} />
       </Routes>
+
+      <ScrollToTopButton />
 
       <AnimatePresence>
         {isLoading ? (
