@@ -4,12 +4,14 @@ import { AnimatePresence, motion } from "framer-motion";
 import type { IconType } from "react-icons";
 import { FaDraftingCompass, FaLayerGroup } from "react-icons/fa";
 import {
+  SiCss3,
   SiCanva,
   SiDart,
   SiFirebase,
   SiFigma,
   SiFlutter,
   SiGit,
+  SiHtml5,
   SiJavascript,
   SiMysql,
   SiPhp,
@@ -28,6 +30,8 @@ type SkillItem = {
 };
 
 const skills: SkillItem[] = [
+  { category: "Frontend", name: "HTML", icon: SiHtml5, iconClassName: "text-orange-500" },
+  { category: "Frontend", name: "CSS", icon: SiCss3, iconClassName: "text-blue-500" },
   { category: "Frontend", name: "React", icon: SiReact, iconClassName: "text-sky-500" },
   { category: "Frontend", name: "TypeScript", icon: SiTypescript, iconClassName: "text-blue-600" },
   { category: "Frontend", name: "JavaScript", icon: SiJavascript, iconClassName: "text-yellow-500" },
