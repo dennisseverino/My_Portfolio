@@ -139,7 +139,7 @@ textarea {
 }
 
 .glass-panel {
-  border: 1px solid var(--card-icon-bg);
+  border: 1px solid var(--page-muted-soft);
   box-shadow: var(--shadow-soft);
   backdrop-filter: blur(22px);
 }
