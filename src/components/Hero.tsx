@@ -3,7 +3,13 @@ import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
 import { Link } from "react-scroll";
 
-export default function Hero() {
+type HeroProps = {
+  theme: "light" | "dark";
+};
+
+export default function Hero({ theme }: HeroProps) {
+  const heroImage = theme === "dark" ? "/profile-dark.JPG" : "/profile.png";
+
   return (
     <section
       id="home"
@@ -78,9 +84,10 @@ export default function Hero() {
         >
           {/* IMAGE */}
           <img
-            src="/profile.png"
+            key={heroImage}
+            src={heroImage}
             alt="Dennis"
-            className="w-[300px] md:w-[350px] relative z-10"
+            className="w-[300px] md:w-[350px] relative z-10 transition-opacity duration-300"
           />
 
           {/* DECORATIVE BOXES */}

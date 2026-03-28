@@ -31,22 +31,22 @@
   --page-text: #f3f4f6;
   --page-muted: #b4bec8;
   --page-muted-soft: #94a3b8;
-  --page-border: #e5e7eb;
+  --page-border: #475569;
   --page-border-soft: #334155;
   --nav-bg: rgba(14, 20, 25, 0.82);
-  --button-primary-bg: #f5f4f0;
-  --button-primary-text: #111827;
-  --button-primary-hover: #ffffff;
-  --contrast-bg: #f5f4f0;
-  --contrast-text: #1f2937;
-  --contrast-muted: #6b7280;
-  --contrast-border: #cbd5e1;
-  --card-bg: rgba(23, 32, 41, 0.78);
-  --card-border: rgba(71, 85, 105, 0.65);
-  --card-icon-bg: rgba(41, 50, 62, 0.9);
+  --button-primary-bg: #0f766e;
+  --button-primary-text: #f8fafc;
+  --button-primary-hover: #115e59;
+  --contrast-bg: #111827;
+  --contrast-text: #f8fafc;
+  --contrast-muted: #94a3b8;
+  --contrast-border: #334155;
+  --card-bg: rgba(17, 24, 39, 0.86);
+  --card-border: rgba(51, 65, 85, 0.9);
+  --card-icon-bg: rgba(30, 41, 59, 0.92);
   --chip-bg: #1f2937;
   --chip-text: #e5e7eb;
-  --accent: #82fff3;
+  --accent: #0f766e;
 }
 
 html {

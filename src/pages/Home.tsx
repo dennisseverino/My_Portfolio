@@ -15,7 +15,7 @@ export default function Home({ theme, onToggleTheme }: HomeProps) {
   return (
     <>
       <Navbar theme={theme} onToggleTheme={onToggleTheme} />
-      <Hero />
+      <Hero theme={theme} />
       <About />
       <Skills />
       <Projects />
