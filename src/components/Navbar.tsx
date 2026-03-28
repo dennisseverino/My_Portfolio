@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { FaMoon, FaSun } from "react-icons/fa";
 import { Link } from "react-scroll";
 
@@ -18,21 +19,38 @@ export default function Navbar({ theme, onToggleTheme }: NavbarProps) {
   const nextTheme = theme === "light" ? "dark" : "light";
 
   return (
-    <nav className="fixed left-0 top-0 z-50 flex w-full items-center justify-between border border-[var(--page-border)] bg-[var(--nav-bg)] px-10 py-4 backdrop-blur md:px-20">
-      <h1 className="font-semibold text-[var(--page-text)]">Dennis</h1>
+    <motion.nav
+      initial={{ opacity: 0, y: -24 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      className="fixed left-0 top-0 z-50 w-full px-4 py-4 md:px-8 lg:px-12"
+    >
+      <div className="glass-panel mx-auto flex max-w-7xl items-center justify-between rounded-full px-5 py-3 md:px-7">
+        <Link
+          to="home"
+          smooth
+          duration={500}
+          className="group flex cursor-pointer items-center gap-3"
+        >
+          <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[var(--accent-soft)] text-sm font-semibold text-[var(--page-text)]">
+            DS
+          </span>
+          <span className="hidden text-sm font-semibold tracking-[0.2em] text-[var(--page-text)] sm:block">
+            DENNIS
+          </span>
+        </Link>
 
-      <div className="ml-auto flex items-center gap-4 md:gap-8">
-        <div className="flex gap-6 text-sm text-[var(--page-text)]">
+        <div className="hidden items-center gap-2 rounded-full border border-[var(--page-border-soft)] bg-[var(--card-bg)]/80 px-2 py-2 md:flex">
           {navItems.map(({ to, label }) => (
             <Link
               key={to}
               to={to}
               smooth
               duration={500}
-              className="group relative cursor-pointer"
+              offset={-90}
+              className="rounded-full px-4 py-2 text-sm text-[var(--page-muted)] hover:bg-[var(--accent-soft)] hover:text-[var(--page-text)]"
             >
               {label}
-              <span className="absolute left-0 -bottom-1 h-[2px] w-full origin-left scale-x-0 bg-[var(--page-text)] transition-transform duration-300 group-hover:scale-x-100"></span>
             </Link>
           ))}
         </div>
@@ -42,12 +60,14 @@ export default function Navbar({ theme, onToggleTheme }: NavbarProps) {
           onClick={onToggleTheme}
           aria-label={`Switch to ${nextTheme} mode`}
           title={`Switch to ${nextTheme} mode`}
-          className="flex items-center gap-2 rounded-full border border-[var(--page-border-soft)] bg-[var(--card-bg)] px-4 py-2 text-sm font-medium text-[var(--page-text)] transition hover:border-[var(--page-border)]"
+          className="flex items-center gap-2 rounded-full border border-[var(--page-border-soft)] bg-[var(--card-bg-strong)] px-4 py-2 text-sm font-medium text-[var(--page-text)] hover:border-[var(--accent)] hover:text-[var(--accent)]"
         >
           {theme === "light" ? <FaMoon /> : <FaSun />}
-          <span className="hidden md:inline">{theme === "light" ? "Dark" : "Light"}</span>
+          <span className="hidden sm:inline">
+            {theme === "light" ? "Dark Mode" : "Light Mode"}
+          </span>
         </button>
       </div>
-    </nav>
+    </motion.nav>
   );
 }

@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+import { FaArrowRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 type Project = {
@@ -15,7 +17,7 @@ const projects: Project[] = [
     type: "Web Application",
     title: "Web Exhibition",
     description:
-      "Designing a static website to showcase the 2023 MassKara Festival, capturing the vibrant essence of Bacolod City.",
+      "A static experience built to showcase the 2023 MassKara Festival with a stronger visual story and more polished presentation.",
     image: "/1.svg",
     link: "/masskaraWebsite/index.html",
   },
@@ -24,7 +26,7 @@ const projects: Project[] = [
     type: "Web/Mobile Application",
     title: "E-Commerce Platform",
     description:
-      "ProDuce is a web and mobile e-commerce platform that enables public market vendors to sell vegetables online while reducing waste.",
+      "ProDuce connects public market vendors and customers through a streamlined buying flow designed to reduce waste and improve accessibility.",
     image: "/2.svg",
     link: "/produce",
   },
@@ -33,7 +35,7 @@ const projects: Project[] = [
     type: "System Application",
     title: "HRIS Attendance System",
     description:
-      "A role-based employee management system designed to streamline attendance, scheduling, and access control.",
+      "A role-based employee management system for attendance, scheduling, and controlled access across teams.",
     image: "/3.svg",
     link: "#",
   },
@@ -43,66 +45,104 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="bg-[var(--contrast-bg)] px-10 py-20 text-[var(--contrast-text)] md:px-20"
+      className="section-shell bg-[var(--contrast-bg)] px-4 py-24 text-[var(--contrast-text)] md:px-8 lg:px-12"
     >
-      <div className="mb-16">
-        <p className="mb-2 text-sm tracking-widest text-[var(--accent)]">
-          - PORTFOLIO
-        </p>
+      <div className="mx-auto max-w-7xl">
+        <motion.div
+          initial={{ opacity: 0, y: 32 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.7 }}
+          className="mb-14 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between"
+        >
+          <div>
+            <p className="section-kicker">Portfolio</p>
+            <h2 className="mt-5 max-w-2xl text-4xl font-semibold md:text-5xl">
+              Selected work focused on usability, structure, and polish.
+            </h2>
+            <div className="section-rule mt-6"></div>
+          </div>
 
-        <h2 className="text-3xl font-bold md:text-4xl">My Experiences</h2>
+          <p className="max-w-xl text-[var(--contrast-muted)]">
+            These projects reflect how I approach product design and
+            implementation: clear hierarchy, clean interaction, and practical
+            system thinking.
+          </p>
+        </motion.div>
 
-        <div className="mt-4 h-[2px] w-16 bg-[var(--accent)]"></div>
-      </div>
+        <div className="space-y-8">
+          {projects.map((project, index) => {
+            const isEven = index % 2 === 0;
 
-      <div className="space-y-24">
-        {projects.map((project, index) => {
-          const isReverse = index % 2 !== 0;
+            return (
+              <motion.article
+                key={project.id}
+                initial={{ opacity: 0, y: 42 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.25 }}
+                transition={{ duration: 0.7, delay: index * 0.08 }}
+                whileHover={{ y: -6 }}
+                className="glass-panel rounded-[2rem] p-6 md:p-8"
+              >
+                <div
+                  className={`grid items-center gap-10 lg:grid-cols-2 ${
+                    isEven ? "" : "lg:[&>*:first-child]:order-2"
+                  }`}
+                >
+                  <div className="relative overflow-hidden rounded-[1.5rem] border border-[var(--contrast-border)] bg-[var(--card-bg-strong)] p-4">
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,var(--spotlight-a),transparent_40%)]"></div>
+                    <motion.img
+                      whileHover={{ scale: 1.04 }}
+                      src={project.image}
+                      alt={project.title}
+                      className="relative w-full rounded-[1.2rem]"
+                    />
+                  </div>
 
-          return (
-            <div
-              key={project.id}
-              className={`grid items-center gap-10 md:grid-cols-2 ${
-                isReverse ? "md:flex-row-reverse" : ""
-              }`}
-            >
-              <div className={isReverse ? "md:order-2" : ""}>
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full rounded"
-                />
-              </div>
+                  <div>
+                    <p className="text-sm uppercase tracking-[0.3em] text-[var(--accent)]">
+                      {project.type}
+                    </p>
+                    <div className="mt-4 flex items-end gap-4">
+                      <span className="text-5xl font-semibold text-[var(--contrast-muted)]">
+                        {project.id}
+                      </span>
+                      <h3 className="text-3xl font-semibold md:text-4xl">
+                        {project.title}
+                      </h3>
+                    </div>
 
-              <div className={isReverse ? "md:order-1" : ""}>
-                <h3 className="mb-2 text-6xl font-bold text-[var(--contrast-muted)]">
-                  {project.id}
-                </h3>
+                    <p className="mt-6 max-w-xl leading-relaxed text-[var(--contrast-muted)]">
+                      {project.description}
+                    </p>
 
-                <p className="mb-2 text-medium text-[var(--contrast-muted)]">
-                  {project.type}
-                </p>
-
-                <h4 className="mb-4 text-3xl font-semibold text-[var(--accent)]">
-                  {project.title}
-                </h4>
-
-                <p className="mb-4 max-w-md text-[var(--contrast-muted)]">
-                  {project.description}
-                </p>
-
-                {project.id === "02" && (
-                  <Link
-                    to="/produce"
-                    className="text-sm text-[var(--accent)] hover:underline"
-                  >
-                    View More →
-                  </Link>
-                )}
-              </div>
-            </div>
-          );
-        })}
+                    {project.link !== "#" && (
+                      <div className="mt-8">
+                        {project.link === "/produce" ? (
+                          <Link
+                            to={project.link}
+                            className="inline-flex items-center gap-3 rounded-full border border-[var(--contrast-border)] px-5 py-3 text-sm font-semibold text-[var(--contrast-text)] hover:border-[var(--accent)] hover:text-[var(--accent)]"
+                          >
+                            Explore Project
+                            <FaArrowRight />
+                          </Link>
+                        ) : (
+                          <a
+                            href={project.link}
+                            className="inline-flex items-center gap-3 rounded-full border border-[var(--contrast-border)] px-5 py-3 text-sm font-semibold text-[var(--contrast-text)] hover:border-[var(--accent)] hover:text-[var(--accent)]"
+                          >
+                            Explore Project
+                            <FaArrowRight />
+                          </a>
+                        )}
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </motion.article>
+            );
+          })}
+        </div>
       </div>
     </section>
   );

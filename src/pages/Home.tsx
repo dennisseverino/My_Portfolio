@@ -13,7 +13,7 @@ type HomeProps = {
 
 export default function Home({ theme, onToggleTheme }: HomeProps) {
   return (
-    <>
+    <main className="relative overflow-hidden">
       <Navbar theme={theme} onToggleTheme={onToggleTheme} />
       <Hero theme={theme} />
       <About />
@@ -21,6 +21,6 @@ export default function Home({ theme, onToggleTheme }: HomeProps) {
       <Projects />
       <Contact />
       <Footer />
-    </>
+    </main>
   );
 }
