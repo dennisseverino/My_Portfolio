@@ -42,7 +42,7 @@ export default function About() {
           <div className="section-rule mt-6"></div>
 
           <p className="mt-8 max-w-xl text-lg leading-relaxed text-[var(--contrast-muted)]">
-            I&apos;m a fresh graduate full stack developer with a strong base in
+            I&apos;m a full stack & Mobile developer with a strong base in
             frontend and backend development. I care about structure, motion,
             and usability, and I like building products that feel polished from
             the first interaction.
