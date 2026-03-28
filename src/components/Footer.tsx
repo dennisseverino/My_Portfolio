@@ -8,7 +8,7 @@ import {
 
 const socialItems = [
   {
-    href: "mailto:dennissv.severino@gmail.com",
+    href: "mailto:dennisiv.severino@gmail.com",
     icon: FaEnvelope,
   },
   {
@@ -61,7 +61,7 @@ export default function Footer() {
           <div className="space-y-4">
             <div className="flex items-center gap-3 text-[var(--contrast-muted)]">
               <FaEnvelope className="text-[var(--accent)]" />
-              <span>dennissv.severino@gmail.com</span>
+              <span>dennisiv.severino@gmail.com</span>
             </div>
             <div className="flex items-center gap-3 text-[var(--contrast-muted)]">
               <FaPhone className="text-[var(--accent)]" />
