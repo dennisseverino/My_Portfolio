@@ -30,6 +30,7 @@ export default function App() {
   const [theme, setTheme] = useState<Theme>(getInitialTheme);
   const [progress, setProgress] = useState(1);
   const [isLoading, setIsLoading] = useState(true);
+  const [isBreaking, setIsBreaking] = useState(false);
 
   useEffect(() => {
     document.documentElement.dataset.theme = theme;
@@ -47,7 +48,7 @@ export default function App() {
 
   useEffect(() => {
     let frameId = 0;
-    let exitTimer: ReturnType<typeof setTimeout> | undefined;
+    let breakTimer: ReturnType<typeof setTimeout> | undefined;
     const startTime = performance.now();
 
     const tick = (currentTime: number) => {
@@ -64,17 +65,19 @@ export default function App() {
         return;
       }
 
-      exitTimer = window.setTimeout(() => {
+      setIsBreaking(true);
+
+      breakTimer = window.setTimeout(() => {
         setIsLoading(false);
-      }, 220);
+      }, 720);
     };
 
     frameId = window.requestAnimationFrame(tick);
 
     return () => {
       window.cancelAnimationFrame(frameId);
-      if (exitTimer) {
-        window.clearTimeout(exitTimer);
+      if (breakTimer) {
+        window.clearTimeout(breakTimer);
       }
     };
   }, []);
@@ -98,7 +101,11 @@ export default function App() {
         <Route path="/produce" element={<Produce />} />
       </Routes>
 
-      <AnimatePresence>{isLoading ? <LoadingScreen progress={progress} /> : null}</AnimatePresence>
+      <AnimatePresence>
+        {isLoading ? (
+          <LoadingScreen progress={progress} isBreaking={isBreaking} />
+        ) : null}
+      </AnimatePresence>
     </>
   );
 }
