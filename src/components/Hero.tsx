@@ -60,11 +60,9 @@ export default function Hero({ theme }: HeroProps) {
                   sequence={[
                     "Full Stack Developer",
                     1800,
-                    "UI-focused Builder",
-                    1800,
-                    "Problem Solver",
-                    1800,
                     "Mobile Developer",
+                    1800,
+                    "UI/UX Designer",
                     1800,
                   ]}
                   wrapper="span"
