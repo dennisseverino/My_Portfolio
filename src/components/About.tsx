@@ -61,7 +61,7 @@ export default function About() {
               <p className="text-sm text-[var(--contrast-muted)]">
                 Preferred Stack
               </p>
-              <p className="mt-3 text-2xl font-semibold">React, TS, PHP, Mobile</p>
+              <p className="mt-3 text-2xl font-semibold">React, PHP, Mobile</p>
             </div>
           </div>
         </motion.div>
