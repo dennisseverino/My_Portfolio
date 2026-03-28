@@ -1,10 +1,9 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
-import { Link } from "react-router-dom";
 
 export default function Produce() {
-
   const loginImages = [
     "/produce_assets/login/landing_page.jpg",
     "/produce_assets/login/login.jpg",
@@ -45,7 +44,7 @@ export default function Produce() {
     "/produce_assets/web/stats.png",
     "/produce_assets/web/transactions.png",
     "/produce_assets/web/users.png",
-    ];
+  ];
 
   const allImages = [...loginImages, ...buyerImages, ...vendorImages, ...webImages];
 
@@ -58,130 +57,94 @@ export default function Produce() {
   };
 
   const renderSection = (title: string, images: string[], offset: number) => (
-    <div className="bg-white rounded-xl shadow-md p-8 mt-16">
-
-      <h2 className="text-2xl font-semibold text-[#353535] mb-8">
+    <div className="mt-16 rounded-xl border border-[var(--page-border-soft)] bg-[var(--card-bg)] p-8 shadow-md backdrop-blur-sm">
+      <h2 className="mb-8 text-2xl font-semibold text-[var(--page-text)]">
         {title}
       </h2>
 
-      <div className="grid grid-cols-2 md:grid-cols-6 gap-6">
-
+      <div className="grid grid-cols-2 gap-6 md:grid-cols-6">
         {images.map((img, i) => (
           <div
-            key={i}
-            className="relative overflow-hidden rounded-lg cursor-pointer group border border-gray-200"
+            key={img}
+            className="group relative cursor-pointer overflow-hidden rounded-lg border border-[var(--page-border-soft)]"
             onClick={() => openViewer(offset + i)}
           >
-
             <img
               src={img}
-              className="w-full h-[160px] object-cover group-hover:scale-110 transition duration-500"
+              className="h-[160px] w-full object-cover transition duration-500 group-hover:scale-110"
             />
 
-            {/* Hover Overlay */}
-            <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition duration-300">
-              <span className="text-white text-sm font-medium">
+            <div className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 transition duration-300 group-hover:opacity-100">
+              <span className="text-sm font-medium text-white">
                 View Screenshot
               </span>
             </div>
-
           </div>
         ))}
-
       </div>
     </div>
   );
 
   return (
-    <section className="min-h-screen bg-[#F5F4F0] px-10 md:px-20 py-20">
-
-      {/* BACK BUTTON */}
+    <section className="min-h-screen bg-[var(--page-bg)] px-10 py-20 md:px-20">
       <Link
         to="/"
-        className="text-sm text-gray-500 hover:text-[#353535] transition"
+        className="text-sm text-[var(--page-muted-soft)] transition hover:text-[var(--page-text)]"
       >
         ← Back to Portfolio
       </Link>
 
-      {/* HERO */}
       <div className="mt-10 max-w-3xl">
-
-        <h1 className="text-4xl md:text-5xl font-bold text-[#353535]">
+        <h1 className="text-4xl font-bold text-[var(--page-text)] md:text-5xl">
           ProDuce
         </h1>
 
-        <p className="text-lg text-gray-600 mt-3">
+        <p className="mt-3 text-lg text-[var(--page-muted)]">
           Web & Mobile E-Commerce Platform
         </p>
 
-        <p className="text-gray-600 mt-6 leading-relaxed">
+        <p className="mt-6 leading-relaxed text-[var(--page-muted)]">
           ProDuce is a web and mobile e-commerce system designed to help public
           market vendors sell vegetables online while reducing food waste and
           improving market accessibility for customers.
         </p>
 
-
-        {/* TECH STACK */}
-
-        <h2 className="text-xl font-semibold text-[#353535] mt-8">
+        <h2 className="mt-8 text-xl font-semibold text-[var(--page-text)]">
           Tech Stack Used
         </h2>
 
-        <div className="flex flex-wrap gap-3 mt-6">
-
-          <span className="bg-gray-200 px-3 py-1 rounded text-sm">
-            Flutter
-          </span>
-
-          <span className="bg-gray-200 px-3 py-1 rounded text-sm">
-            PHP
-          </span>
-
-          <span className="bg-gray-200 px-3 py-1 rounded text-sm">
-            MySQL
-          </span>
-
-          <span className="bg-gray-200 px-3 py-1 rounded text-sm">
-            Figma
-          </span>
-
-          <span className="bg-gray-200 px-3 py-1 rounded text-sm">
-            Canva
-          </span>
-
+        <div className="mt-6 flex flex-wrap gap-3">
+          {["Flutter", "PHP", "MySQL", "Figma", "Canva"].map((item) => (
+            <span
+              key={item}
+              className="rounded px-3 py-1 text-sm text-[var(--chip-text)]"
+              style={{ backgroundColor: "var(--chip-bg)" }}
+            >
+              {item}
+            </span>
+          ))}
         </div>
-
       </div>
 
-      {/* GALLERY SECTIONS */}
       {renderSection("Login & Authentication", loginImages, 0)}
-
-      {renderSection(
-        "Buyer Mobile Application",
-        buyerImages,
-        loginImages.length
-      )}
-
+      {renderSection("Buyer Mobile Application", buyerImages, loginImages.length)}
       {renderSection(
         "Vendor Management System",
         vendorImages,
         loginImages.length + buyerImages.length
       )}
-
       {renderSection(
         "Web Administration Dashboard",
         webImages,
         loginImages.length + buyerImages.length + vendorImages.length
-    )}
+      )}
 
-      {/* LIGHTBOX */}
       <Lightbox
         open={open}
         close={() => setOpen(false)}
         index={index}
         slides={allImages.map((src) => ({ src }))}
       />
-
     </section>
   );
 }

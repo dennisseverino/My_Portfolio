@@ -1,76 +1,68 @@
-import { FaFacebookF, FaGithub, FaLinkedin, FaEnvelope, FaPhone } from "react-icons/fa";
+import {
+  FaEnvelope,
+  FaFacebookF,
+  FaGithub,
+  FaLinkedin,
+  FaPhone,
+} from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#353535] text-white px-10 md:px-20 py-16">
-
-      {/* TOP */}
-      <div className="grid md:grid-cols-3 gap-10 items-start">
-
-        {/* LEFT */}
+    <footer className="bg-[var(--contrast-bg)] px-10 py-16 text-[var(--contrast-text)] md:px-20">
+      <div className="grid items-start gap-10 md:grid-cols-3">
         <div>
-          <h3 className="text-xl font-semibold mb-2">
-            Dennis B. Severino IV
-          </h3>
-          <p className="text-gray-400">Full Stack Engineer</p>
+          <h3 className="mb-2 text-xl font-semibold">Dennis B. Severino IV</h3>
+          <p className="text-[var(--contrast-muted)]">Full Stack Engineer</p>
         </div>
 
-        {/* CENTER */}
         <div>
-          <p className="text-gray-400 mb-4 tracking-widest text-sm">
+          <p className="mb-4 text-sm tracking-widest text-[var(--contrast-muted)]">
             FOLLOW
           </p>
 
           <div className="flex gap-4">
-            <div className="border border-gray-500 p-3 rounded hover:border-white transition cursor-pointer">
+            <div className="cursor-pointer rounded border border-[var(--contrast-border)] p-3 transition hover:border-[var(--contrast-text)]">
               <FaFacebookF />
             </div>
-            <div className="border border-gray-500 p-3 rounded hover:border-white transition cursor-pointer">
+            <div className="cursor-pointer rounded border border-[var(--contrast-border)] p-3 transition hover:border-[var(--contrast-text)]">
               <FaGithub />
             </div>
-            <div className="border border-gray-500 p-3 rounded hover:border-white transition cursor-pointer">
+            <div className="cursor-pointer rounded border border-[var(--contrast-border)] p-3 transition hover:border-[var(--contrast-text)]">
               <FaLinkedin />
             </div>
           </div>
         </div>
 
-        {/* RIGHT */}
         <div>
-          <p className="text-gray-400 mb-4">Contact me</p>
+          <p className="mb-4 text-[var(--contrast-muted)]">Contact me</p>
 
           <div className="space-y-4">
-
             <div className="flex items-center gap-3">
-              <div className="border border-gray-500 p-2 rounded">
+              <div className="rounded border border-[var(--contrast-border)] p-2">
                 <FaEnvelope />
               </div>
-              <p className="text-gray-400 text-sm">
+              <p className="text-sm text-[var(--contrast-muted)]">
                 dennissv.severino@gmail.com
               </p>
             </div>
 
             <div className="flex items-center gap-3">
-              <div className="border border-gray-500 p-2 rounded">
+              <div className="rounded border border-[var(--contrast-border)] p-2">
                 <FaPhone />
               </div>
-              <p className="text-gray-400 text-sm">
+              <p className="text-sm text-[var(--contrast-muted)]">
                 +63 962-992-5647
               </p>
             </div>
-
           </div>
         </div>
-
       </div>
 
-      {/* DIVIDER */}
-      <div className="border-t border-gray-600 my-10"></div>
+      <div className="my-10 border-t border-[var(--contrast-border)]"></div>
 
-      {/* BOTTOM */}
-      <p className="text-gray-500 text-sm">
+      <p className="text-sm text-[var(--contrast-muted)]">
         © 2026 Dennis B. Severino IV. All rights reserved.
       </p>
-
     </footer>
   );
 }

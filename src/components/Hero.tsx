@@ -7,7 +7,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="min-h-screen bg-[#F5F4F0] flex items-center px-10 md:px-20"
+      className="min-h-screen bg-[var(--page-bg)] px-10 md:px-20 flex items-center"
     >
       <div className="grid md:grid-cols-2 gap-10 items-center w-full">
 
@@ -17,7 +17,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-        <h1 className="text-4xl md:text-5xl font-medium text-[#353535] mb-2">
+        <h1 className="text-4xl md:text-5xl font-medium text-[var(--page-text)] mb-2 font-instrument">
           <TypeAnimation
             sequence={[
               "Dennis B. Severino IV",
@@ -32,7 +32,7 @@ export default function Hero() {
         </h1>
         <br />
 
-          <p className="text-gray-600 max-w-md mb-6 leading-relaxed">
+          <p className="text-[var(--page-muted)] max-w-md mb-6 leading-relaxed">
             I create beautiful, functional digital experiences that help
             businesses grow and users thrive. Specializing in modern web
             technologies and user-centered design.
@@ -41,12 +41,12 @@ export default function Hero() {
           {/* BUTTONS */}
           <div className="flex gap-4 mb-6">
             <Link to="projects" smooth duration={500}>
-              <button className="bg-[#353535] text-white px-5 py-2 rounded-md text-sm hover:bg-[#2a2a2a] transition">
+              <button className="bg-[var(--button-primary-bg)] text-[var(--button-primary-text)] px-5 py-2 rounded-md text-sm hover:bg-[var(--button-primary-hover)] transition">
                 View my work
               </button>
             </Link>
 
-            <Link to="contact" smooth duration={500} className="border border-[#353535] px-5 py-2 rounded-md text-sm hover:bg-[#f5f3eb] transition">
+            <Link to="contact" smooth duration={500} className="border border-[var(--page-border)] text-[var(--page-text)] px-5 py-2 rounded-md text-sm hover:bg-[var(--card-bg)] transition">
             <button>
               Contact Me
             </button>
@@ -55,7 +55,7 @@ export default function Hero() {
           </div>
 
           {/* SOCIALS */}
-          <div className="flex gap-4 text-xl text-[#353535]">
+          <div className="flex gap-4 text-xl text-[var(--page-text)]">
             <a href="https://github.com/dennisseverino" target="_blank" rel="noopener noreferrer">
               <FaGithub className="cursor-pointer hover:opacity-70" />
             </a>
@@ -84,8 +84,8 @@ export default function Hero() {
           />
 
           {/* DECORATIVE BOXES */}
-          <div className="absolute top-0 right-20 w-40 h-40 border border-[#353535]" />
-          <div className="absolute bottom-0 left-10 w-40 h-40 border border-[#353535]" />
+          <div className="absolute top-0 right-20 w-40 h-40 border border-[var(--page-border)]" />
+          <div className="absolute bottom-0 left-10 w-40 h-40 border border-[var(--page-border)]" />
         </motion.div>
 
       </div>

@@ -6,10 +6,15 @@ import Contact from "../components/Contact";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 
-export default function Home() {
+type HomeProps = {
+  theme: "light" | "dark";
+  onToggleTheme: () => void;
+};
+
+export default function Home({ theme, onToggleTheme }: HomeProps) {
   return (
     <>
-    <Navbar />
+      <Navbar theme={theme} onToggleTheme={onToggleTheme} />
       <Hero />
       <About />
       <Skills />
