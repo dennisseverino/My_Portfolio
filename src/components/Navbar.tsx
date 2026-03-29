@@ -19,6 +19,10 @@ const navItems = [
 export default function Navbar({ theme, onToggleTheme }: NavbarProps) {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const nextTheme = theme === "light" ? "dark" : "light";
+  const logoBadgeClass =
+    theme === "light"
+      ? "border-slate-900/10 bg-white/90 shadow-[0_10px_24px_rgba(15,23,42,0.08)]"
+      : "border-white/10 bg-slate-950/70 shadow-[0_14px_30px_rgba(2,6,23,0.34)]";
 
   return (
     <motion.nav
@@ -41,8 +45,14 @@ export default function Navbar({ theme, onToggleTheme }: NavbarProps) {
             onClick={() => setIsMobileOpen(false)}
             className="group flex cursor-pointer items-center gap-3"
           >
-            <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[var(--accent-soft)] text-sm font-semibold text-[var(--page-text)]">
-              DS
+            <span
+              className={`flex h-10 w-10 items-center justify-center overflow-hidden rounded-full border p-1 ${logoBadgeClass}`}
+            >
+              <img
+                src="/logo.svg"
+                alt="Dennis logo"
+                className="h-full w-full object-contain"
+              />
             </span>
             <span className="hidden text-sm font-semibold tracking-[0.2em] text-[var(--page-text)] sm:block">
               DENNIS
