@@ -11,6 +11,7 @@ import {
   SiFigma,
   SiFlutter,
   SiGit,
+  SiGithub,
   SiHtml5,
   SiJavascript,
   SiMysql,
@@ -19,6 +20,7 @@ import {
   SiReact,
   SiTypescript,
   SiVercel,
+  SiWebflow,
 } from "react-icons/si";
 import { VscVscode } from "react-icons/vsc";
 
@@ -40,17 +42,19 @@ const skills: SkillItem[] = [
   { category: "Backend", name: "PHP", icon: SiPhp, iconClassName: "text-indigo-500" },
   { category: "Backend", name: "MySQL", icon: SiMysql, iconClassName: "text-blue-500" },
   { category: "Backend", name: "Firebase", icon: SiFirebase, iconClassName: "text-amber-500" },
+  { category: "CMS", name: "Webflow", icon: SiWebflow, iconClassName: "text-sky-500" },
   { category: "Design", name: "Figma", icon: SiFigma, iconClassName: "text-rose-500" },
   { category: "Design", name: "Canva", icon: SiCanva, iconClassName: "text-cyan-500" },
   { category: "Design", name: "Prototyping", icon: FaDraftingCompass, iconClassName: "text-orange-500" },
   { category: "Design", name: "Design Systems", icon: FaLayerGroup, iconClassName: "text-emerald-600" },
   { category: "Tools", name: "Git", icon: SiGit, iconClassName: "text-orange-600" },
+  { category: "Tools", name: "GitHub", icon: SiGithub, iconClassName: "text-slate-800" },
   { category: "Tools", name: "VS Code", icon: VscVscode, iconClassName: "text-blue-500" },
   { category: "Tools", name: "Postman", icon: SiPostman, iconClassName: "text-orange-500" },
   { category: "Tools", name: "Vercel", icon: SiVercel, iconClassName: "text-black" },
 ];
 
-const categories = ["All", "Frontend", "Backend", "Mobile", "Design", "Tools"] as const;
+const categories = ["All", "Frontend", "Backend", "Mobile", "CMS", "Design", "Tools"] as const;
 const rowDurations = ["32s", "36s"];
 
 function expandRow(items: SkillItem[]) {
@@ -103,7 +107,7 @@ export default function Skills() {
           </div>
 
           <p className="max-w-xl text-[var(--page-muted)]">
-            I work across frontend, backend, mobile, design, and delivery tools,
+            I work across frontend, backend, mobile, CMS, design, and delivery tools,
             with a bias for systems that are maintainable and visually refined.
           </p>
         </motion.div>
