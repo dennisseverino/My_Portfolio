@@ -9,6 +9,7 @@ type Project = {
   description: string;
   image: string;
   link: string;
+  techStack: string[];
 };
 
 const projects: Project[] = [
@@ -20,6 +21,7 @@ const projects: Project[] = [
       "A static experience built to showcase the 2023 MassKara Festival with a stronger visual story and more polished presentation.",
     image: "/1.svg",
     link: "/masskaraWebsite/index.html",
+    techStack: ["HTML", "CSS", "JavaScript", "GSAP"],
   },
   {
     id: "02",
@@ -29,6 +31,15 @@ const projects: Project[] = [
       "ProDuce connects public market vendors and customers through a streamlined buying flow designed to reduce waste and improve accessibility.",
     image: "/2.svg",
     link: "/produce",
+    techStack: [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "PHP",
+      "Flutter",
+      "Dart",
+      "MySQL",
+    ],
   },
   {
     id: "03",
@@ -38,6 +49,7 @@ const projects: Project[] = [
       "A role-based employee management system for attendance, scheduling, and controlled access across teams.",
     image: "/3.svg",
     link: "#",
+    techStack: ["HTML", "CSS", "PHP", "React.js", "MySQL", "Vite", "Vercel"],
   },
 ];
 
@@ -115,6 +127,22 @@ export default function Projects() {
                     <p className="mt-6 max-w-xl leading-relaxed text-[var(--contrast-muted)]">
                       {project.description}
                     </p>
+
+                    <div className="mt-7 max-w-xl rounded-[1.4rem] border border-[var(--contrast-border)] bg-[rgba(255,255,255,0.03)] p-5">
+                      <p className="text-[11px] uppercase tracking-[0.28em] text-[var(--contrast-muted)]">
+                        Tech Used
+                      </p>
+                      <div className="mt-4 flex flex-wrap gap-2.5">
+                        {project.techStack.map((tech) => (
+                          <span
+                            key={tech}
+                            className="rounded-full border border-[var(--contrast-border)] px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] text-[var(--contrast-text)]"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
 
                     {project.id === "02" && project.link !== "#" && (
                       <div className="mt-8">
