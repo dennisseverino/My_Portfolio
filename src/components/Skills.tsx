@@ -4,6 +4,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import type { IconType } from "react-icons";
 import { FaDraftingCompass, FaLayerGroup } from "react-icons/fa";
 import {
+  SiBitbucket,
   SiCss3,
   SiCanva,
   SiDart,
@@ -15,11 +16,14 @@ import {
   SiHtml5,
   SiJavascript,
   SiMysql,
+  SiNodedotjs,
   SiPhp,
+  SiPostgresql,
   SiPostman,
   SiReact,
   SiTypescript,
   SiVercel,
+  SiVite,
   SiWebflow,
 } from "react-icons/si";
 import { VscVscode } from "react-icons/vsc";
@@ -37,10 +41,13 @@ const skills: SkillItem[] = [
   { category: "Frontend", name: "React", icon: SiReact, iconClassName: "text-sky-500" },
   { category: "Frontend", name: "TypeScript", icon: SiTypescript, iconClassName: "text-blue-600" },
   { category: "Frontend", name: "JavaScript", icon: SiJavascript, iconClassName: "text-yellow-500" },
+  { category: "Frontend", name: "Vite", icon: SiVite, iconClassName: "text-violet-500" },
   { category: "Mobile", name: "Dart", icon: SiDart, iconClassName: "text-cyan-600" },
   { category: "Mobile", name: "Flutter", icon: SiFlutter, iconClassName: "text-sky-400" },
+  { category: "Backend", name: "Node.js", icon: SiNodedotjs, iconClassName: "text-green-600" },
   { category: "Backend", name: "PHP", icon: SiPhp, iconClassName: "text-indigo-500" },
   { category: "Backend", name: "MySQL", icon: SiMysql, iconClassName: "text-blue-500" },
+  { category: "Backend", name: "PostgreSQL", icon: SiPostgresql, iconClassName: "text-sky-700" },
   { category: "Backend", name: "Firebase", icon: SiFirebase, iconClassName: "text-amber-500" },
   { category: "CMS", name: "Webflow", icon: SiWebflow, iconClassName: "text-sky-500" },
   { category: "Design", name: "Figma", icon: SiFigma, iconClassName: "text-rose-500" },
@@ -48,6 +55,7 @@ const skills: SkillItem[] = [
   { category: "Design", name: "Prototyping", icon: FaDraftingCompass, iconClassName: "text-orange-500" },
   { category: "Design", name: "Design Systems", icon: FaLayerGroup, iconClassName: "text-emerald-600" },
   { category: "Tools", name: "Git", icon: SiGit, iconClassName: "text-orange-600" },
+  { category: "Tools", name: "Bitbucket", icon: SiBitbucket, iconClassName: "text-blue-600" },
   { category: "Tools", name: "GitHub", icon: SiGithub, iconClassName: "text-slate-800" },
   { category: "Tools", name: "VS Code", icon: VscVscode, iconClassName: "text-blue-500" },
   { category: "Tools", name: "Postman", icon: SiPostman, iconClassName: "text-orange-500" },
