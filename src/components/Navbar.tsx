@@ -19,6 +19,10 @@ const navItems = [
 export default function Navbar({ theme, onToggleTheme }: NavbarProps) {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const nextTheme = theme === "light" ? "dark" : "light";
+  const logoSrc =
+    theme === "light" ? "/light-theme_logo.png" : "/dark-theme_logo.png";
+  const wordmarkSrc =
+    theme === "light" ? "/light-theme_name.png" : "/dark-theme_name.png";
   const logoBadgeClass =
     theme === "light"
       ? "border-slate-900/10 bg-white/90 shadow-[0_10px_24px_rgba(15,23,42,0.08)]"
@@ -49,14 +53,16 @@ export default function Navbar({ theme, onToggleTheme }: NavbarProps) {
               className={`flex h-10 w-10 items-center justify-center overflow-hidden rounded-full border p-1 ${logoBadgeClass}`}
             >
               <img
-                src="/logo.svg"
+                src={logoSrc}
                 alt="Dennis logo"
                 className="h-full w-full object-contain"
               />
             </span>
-            <span className="hidden text-sm font-semibold tracking-[0.2em] text-[var(--page-text)] sm:block">
-              DENNIS
-            </span>
+            <img
+              src={wordmarkSrc}
+              alt="Dennis"
+              className="hidden h-10 w-auto object-contain sm:block"
+            />
           </Link>
 
           <div className="hidden items-center gap-2 rounded-full border border-[var(--page-border-soft)] bg-[var(--card-bg)]/80 px-2 py-2 md:flex">
