@@ -54,7 +54,7 @@ export default function About() {
                 Projects Completed
               </p>
               <p className="mt-3 text-5xl font-semibold text-[var(--accent)]">
-                4+
+                10+
               </p>
             </div>
             <div className="glass-panel rounded-3xl px-6 py-5">
