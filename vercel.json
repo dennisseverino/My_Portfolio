@@ -1,12 +1,13 @@
 {
-  "routes": [
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "rewrites": [
     {
-      "src": "/masskaraWebsite",
-      "dest": "/masskaraWebsite/index.html"
+      "source": "/masskaraWebsite",
+      "destination": "/masskaraWebsite/index.html"
     },
     {
-      "src": "/masskaraWebsite/(.*)",
-      "dest": "/masskaraWebsite/$1"
+      "source": "/masskaraWebsite/:path*",
+      "destination": "/masskaraWebsite/:path*"
     }
   ]
 }
