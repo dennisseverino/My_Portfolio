@@ -62,7 +62,7 @@ export default function Hero({ theme }: HeroProps) {
                     1800,
                     "Mobile Developer",
                     1800,
-                    "UI/UX Designer",
+                    "Prompt Engineer",
                     1800,
                   ]}
                   wrapper="span"
