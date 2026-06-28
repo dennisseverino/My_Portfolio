@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { FaDownload, FaExternalLinkAlt, FaFilePdf } from "react-icons/fa";
-import resumePath from "../resume/my resume.pdf";
+import resumePath from "../resume/Dennis_Severino-resume.pdf";
 
 export default function Resume() {
   return (

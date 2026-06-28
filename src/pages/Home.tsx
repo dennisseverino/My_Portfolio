@@ -1,5 +1,6 @@
 import Hero from "../components/Hero";
 import About from "../components/About";
+import Experience from "../components/Experience";
 import Skills from "../components/Skills";
 import Projects from "../components/Projects";
 import Resume from "../components/Resume";
@@ -18,6 +19,7 @@ export default function Home({ theme, onToggleTheme }: HomeProps) {
       <Navbar theme={theme} onToggleTheme={onToggleTheme} />
       <Hero theme={theme} />
       <About />
+      <Experience />
       <Skills />
       <Projects />
       <Resume />

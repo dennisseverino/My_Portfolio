@@ -11,6 +11,7 @@ type NavbarProps = {
 const navItems = [
   { to: "home", label: "Home" },
   { to: "about", label: "About" },
+  { to: "experience", label: "Experience" },
   { to: "skills", label: "Skills" },
   { to: "projects", label: "Projects" },
   { to: "resume", label: "Resume" },
@@ -20,8 +21,7 @@ const navItems = [
 export default function Navbar({ theme, onToggleTheme }: NavbarProps) {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const nextTheme = theme === "light" ? "dark" : "light";
-  const logoSrc =
-    theme === "light" ? "/light-theme_logo.png" : "/dark-theme_logo.png";
+  const logoSrc = "/dark-theme_logo.png";
   const wordmarkSrc =
     theme === "light" ? "/light-theme_name.png" : "/dark-theme_name.png";
   const logoBadgeClass =
