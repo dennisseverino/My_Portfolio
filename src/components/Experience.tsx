@@ -65,7 +65,7 @@ export default function Experience() {
           <div>
             <p className="section-kicker">Experience</p>
             <h2 className="mt-5 max-w-3xl text-4xl font-semibold leading-tight md:text-5xl">
-              One year helping build a multi-platform business system.
+              Working to build a multi-platform business system.
             </h2>
             <div className="section-rule mt-6"></div>
           </div>
@@ -98,7 +98,7 @@ export default function Experience() {
                   Full Stack Developer
                 </h3>
                 <p className="mt-3 text-lg font-medium text-[var(--accent)]">
-                  1 year of professional experience
+                  Over a year of professional experience
                 </p>
               </div>
             </div>
