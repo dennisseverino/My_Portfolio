@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { FaArrowRight } from "react-icons/fa";
-import { Link } from "react-router-dom";
 
 type Project = {
   id: string;
