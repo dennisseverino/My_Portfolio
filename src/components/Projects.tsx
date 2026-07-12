@@ -15,8 +15,8 @@ type Project = {
 const projects: Project[] = [
   {
     id: "01",
-    type: "Web Application",
-    title: "Web Exhibition",
+    type: "Web ExhibitionApplication",
+    title: "Masskara Festival",
     description:
       "A static experience built to showcase the 2023 MassKara Festival with a stronger visual story and more polished presentation.",
     image: "/1.svg",
@@ -26,9 +26,9 @@ const projects: Project[] = [
   {
     id: "02",
     type: "Web / Mobile / Design Project",
-    title: "E-Commerce Platform",
+    title: "ProDuce",
     description:
-      "ProDuce connects public market vendors and customers through a streamlined buying flow designed to reduce waste and improve accessibility.",
+      "An E-Commerce Platform that connects public market vendors and customers through a streamlined buying flow designed to reduce waste and improve accessibility.",
     image: "/2.svg",
     link: "/produce",
     techStack: [
@@ -43,13 +43,22 @@ const projects: Project[] = [
   },
   {
     id: "03",
-    type: "System Application",
-    title: "HRIS Attendance System",
+    type: "HRIS attendance system",
+    title: "iReply",
     description:
       "A role-based employee management system for attendance, scheduling, and controlled access across teams.",
     image: "/3.svg",
     link: "#",
     techStack: ["HTML", "CSS", "PHP", "React.js", "MySQL", "Vite", "Vercel"],
+  },
+  {
+    id: "04",
+    type: "Web Application",
+    title: "Project Better",
+    description: "A modern gym management system that streamlines memberships, bookings, payments, attendance, and administrative operations.",
+    image: "/projectbetter.png",
+    link: "https://projectbetter.com.au/",
+    techStack: ["PHP", "Laravel", "Vue.js", "MySQL"],
   },
 ];
 
@@ -144,15 +153,17 @@ export default function Projects() {
                       </div>
                     </div>
 
-                    {project.id === "02" && project.link !== "#" && (
+                    {project.link !== "#" && (
                       <div className="mt-8">
-                        <Link
-                          to={project.link}
+                        <a
+                          href={project.link}
+                          target={project.link.startsWith("http") ? "_blank" : "_self"}
+                          rel={project.link.startsWith("http") ? "noreferrer" : undefined}
                           className="inline-flex items-center gap-3 rounded-full border border-[var(--contrast-border)] px-5 py-3 text-sm font-semibold text-[var(--contrast-text)] hover:border-[var(--accent)] hover:text-[var(--accent)]"
                         >
                           Explore Project
                           <FaArrowRight />
-                        </Link>
+                        </a>
                       </div>
                     )}
                   </div>
