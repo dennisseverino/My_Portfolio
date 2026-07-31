@@ -50,15 +50,6 @@ const projects: Project[] = [
     link: "#",
     techStack: ["HTML", "CSS", "PHP", "React.js", "MySQL", "Vite", "Vercel"],
   },
-  {
-    id: "04",
-    type: "Web Application",
-    title: "Project Better",
-    description: "A modern gym management system that streamlines memberships, bookings, payments, attendance, and administrative operations.",
-    image: "/projectbetter.png",
-    link: "https://projectbetter.com.au/",
-    techStack: ["PHP", "Laravel", "Vue.js", "MySQL"],
-  },
 ];
 
 export default function Projects() {
