@@ -15,16 +15,6 @@ type Project = {
 const projects: Project[] = [
   {
     id: "01",
-    type: "Web ExhibitionApplication",
-    title: "Masskara Festival",
-    description:
-      "A static experience built to showcase the 2023 MassKara Festival with a stronger visual story and more polished presentation.",
-    image: "/1.svg",
-    link: "/masskaraWebsite/index.html",
-    techStack: ["HTML", "CSS", "JavaScript", "GSAP"],
-  },
-  {
-    id: "02",
     type: "Web / Mobile / Design Project",
     title: "ProDuce",
     description:
@@ -42,7 +32,7 @@ const projects: Project[] = [
     ],
   },
   {
-    id: "03",
+    id: "02",
     type: "HRIS attendance system",
     title: "iReply",
     description:
@@ -52,7 +42,7 @@ const projects: Project[] = [
     techStack: ["HTML", "CSS", "PHP", "React.js", "MySQL", "Vite", "Vercel"],
   },
   {
-    id: "04",
+    id: "03",
     type: "Family Law Consultation Website",
     title: "BrightWater",
     description:
@@ -62,7 +52,7 @@ const projects: Project[] = [
     techStack: ["React 19", "JavaScript", "Vite", "Tailwind CSS 4"],
   },
   {
-    id: "05",
+    id: "04",
     type: "Web & Mobile Application",
     title: "BABCS Accounting App",
     description:
@@ -77,6 +67,24 @@ const projects: Project[] = [
       "FastAPI",
       "PostgreSQL",
       "Docker",
+    ],
+  },
+  {
+    id: "05",
+    type: "Restaurant Operations & POS System",
+    title: "POS & Inventory System",
+    description:
+      "A full-stack restaurant management and POS web application combining sales processing, recipe-based inventory, purchasing, expense management, reporting, role-based access, and audit logging.",
+    image: "/6.png",
+    link: "#",
+    accessLabel: "Personal System",
+    techStack: [
+      "React",
+      "TypeScript",
+      "Laravel 11",
+      "PHP 8.2",
+      "PostgreSQL",
+      "Vite",
     ],
   },
 ];
