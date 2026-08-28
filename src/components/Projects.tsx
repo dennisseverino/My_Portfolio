@@ -8,6 +8,7 @@ type Project = {
   description: string;
   image: string;
   link: string;
+  accessLabel?: string;
   techStack: string[];
 };
 
@@ -49,6 +50,34 @@ const projects: Project[] = [
     image: "/3.svg",
     link: "#",
     techStack: ["HTML", "CSS", "PHP", "React.js", "MySQL", "Vite", "Vercel"],
+  },
+  {
+    id: "04",
+    type: "Family Law Consultation Website",
+    title: "BrightWater",
+    description:
+      "A compassionate family-law consultation website designed to help people navigating mental-health challenges find clear, supportive legal guidance.",
+    image: "/4.png",
+    link: "https://brightwater-one.vercel.app/",
+    techStack: ["React 19", "JavaScript", "Vite", "Tailwind CSS 4"],
+  },
+  {
+    id: "05",
+    type: "Web & Mobile Application",
+    title: "BABCS Accounting App",
+    description:
+      "A full-stack accounting, compliance, and client document-management platform for internal accounting teams, with a companion mobile app for secure document capture and offline uploads.",
+    image: "/5.png",
+    link: "#",
+    accessLabel: "Private Internal System",
+    techStack: [
+      "React 19",
+      "React Native",
+      "Expo",
+      "FastAPI",
+      "PostgreSQL",
+      "Docker",
+    ],
   },
 ];
 
@@ -143,17 +172,23 @@ export default function Projects() {
                       </div>
                     </div>
 
-                    {project.link !== "#" && (
+                    {(project.link !== "#" || project.accessLabel) && (
                       <div className="mt-8">
-                        <a
-                          href={project.link}
-                          target={project.link.startsWith("http") ? "_blank" : "_self"}
-                          rel={project.link.startsWith("http") ? "noreferrer" : undefined}
-                          className="inline-flex items-center gap-3 rounded-full border border-[var(--contrast-border)] px-5 py-3 text-sm font-semibold text-[var(--contrast-text)] hover:border-[var(--accent)] hover:text-[var(--accent)]"
-                        >
-                          Explore Project
-                          <FaArrowRight />
-                        </a>
+                        {project.link !== "#" ? (
+                          <a
+                            href={project.link}
+                            target={project.link.startsWith("http") ? "_blank" : "_self"}
+                            rel={project.link.startsWith("http") ? "noreferrer" : undefined}
+                            className="inline-flex items-center gap-3 rounded-full border border-[var(--contrast-border)] px-5 py-3 text-sm font-semibold text-[var(--contrast-text)] hover:border-[var(--accent)] hover:text-[var(--accent)]"
+                          >
+                            Explore Project
+                            <FaArrowRight />
+                          </a>
+                        ) : (
+                          <span className="inline-flex items-center rounded-full border border-[var(--contrast-border)] px-5 py-3 text-sm font-semibold text-[var(--contrast-muted)]">
+                            {project.accessLabel}
+                          </span>
+                        )}
                       </div>
                     )}
                   </div>
